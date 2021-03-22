@@ -2,10 +2,13 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 
 import BaseLayout from '@/layout/base-layout/index.vue'
 
-const routes: Array<RouteRecordRaw> = [
+export const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    component: BaseLayout
+    component: BaseLayout,
+    meta: {
+      title: 'Dashboard'
+    }
   },
   {
     path: '/nested',

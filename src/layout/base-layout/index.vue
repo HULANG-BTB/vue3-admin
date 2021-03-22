@@ -1,7 +1,9 @@
 <template>
   <div class="base-layout">
     <div class="app-container">
-      <div class="sidebar-container">sidebar</div>
+      <div class="sidebar-container">
+        <side-bar />
+      </div>
       <div class="main-container">
         <div class="navbar-container">navbar</div>
         <div class="content-container">content</div>
@@ -12,23 +14,23 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import SideBar from './components/side-bar/index.vue'
 
 export default defineComponent({
-  name: 'BaseLayout'
+  name: 'BaseLayout',
+  components: { SideBar }
 })
 </script>
 
 <style lang="scss" scoped>
-$--sidebar-width: 210px;
-$--sidebar-bgcolor: #3c4669;
-$--navbar-height: 50px;
+@import '~@/styles/variables.scss';
 
 .base-layout {
   .app-container {
     .sidebar-container {
       transition: width 0.28s;
       width: $--sidebar-width !important;
-      background-color: $--sidebar-bgcolor;
+      background-color: $--sidebar-bg-color;
       height: 100vh;
       position: fixed;
       top: 0;
