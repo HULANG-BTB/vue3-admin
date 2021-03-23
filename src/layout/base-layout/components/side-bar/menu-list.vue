@@ -1,25 +1,26 @@
 <template>
-  <el-menu
-    class="menu-list"
-    :collapse="isCollapse"
-    :default-active="activeMenu"
-    :background-color="variables.sideBarMenuBgColor"
-    :text-color="variables.sideBarMenuTextColor"
-    :active-text-color="variables.sideBarMenuTextActiveColor"
-    :unique-opened="false"
-    :collapse-transition="false"
-  >
-    <template v-for="route in routes">
-      <menu-item v-if="!(route.meta && route.meta.hidden)" :key="route.path" :item="route" :base-path="route.path" />
-    </template>
-  </el-menu>
+  <el-scrollbar wrap-class="scrollbar-wrapper">
+    <el-menu
+      :collapse="isCollapse"
+      :default-active="activeMenu"
+      :background-color="variables.sideBarMenuBgColor"
+      :text-color="variables.sideBarMenuTextColor"
+      :active-text-color="variables.sideBarMenuTextActiveColor"
+      :unique-opened="false"
+      :collapse-transition="false"
+    >
+      <template v-for="route in routes">
+        <menu-item v-if="!(route.meta && route.meta.hidden)" :key="route.path" :item="route" :base-path="route.path" />
+      </template>
+    </el-menu>
+  </el-scrollbar>
 </template>
 
 <script lang="ts">
 import { computed, defineComponent, inject } from 'vue'
 import MenuItem from './menu-item.vue'
 import variables from '@/styles/variables.scss'
-import { routes } from '@/router'
+import { routes } from '@/router/routes'
 import { useRoute } from 'vue-router'
 
 export default defineComponent({
@@ -47,9 +48,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<style lang="scss" scoped>
-.menu-list {
-  border-right: none;
-}
-</style>
