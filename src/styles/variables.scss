@@ -1,14 +1,23 @@
 $--sidebar-width: 210px; // 侧边栏宽度
-$--sidebar-bg-color: #3c4669; // 侧边栏背景色
-$--sidebar-text-color: #b1bad9; // 侧边栏文字颜色
-$--sidebar-text-active-color: #ffffff;
+$--sidebar-collapse-width: 60px;
+$--sidebar-menu-bg-color:#304156; // 菜单背景颜色
+$--sidebar-menu-text-color: #bfcbd9; // 菜单文字颜色
+$--sidebar-menu-text-active-color: #409eff; // 菜单激活文字颜色
+$--sidebar-submenu-bg-color: #1f2d3d;
+$--sidebar-submenu-hover-color: #001528;
+$--sidebar-submenu-text-active-color: #f4f4f5;
 
 $--navbar-height: 50px; // 导航栏高度
+$--navbar-bg-color: #ffffff;
 
 :export {
   sideBarWidth: $--sidebar-width;
-  sideBarBgColor: $--sidebar-bg-color;
-  sideBarTextColor: $--sidebar-text-color;
-  sideBarTextActiveColor: $--sidebar-text-active-color;
+  sideBarMenuBgColor: $--sidebar-menu-bg-color;
+  sideBarMenuTextColor: $--sidebar-menu-text-color;
+  sideBarMenuTextActiveColor: $--sidebar-menu-text-active-color;
+  sidebarSubmenuBgColor: $--sidebar-submenu-bg-color;
+  sidebarSubmenuHoverColor: $--sidebar-submenu-hover-color;
+  sidebarSubmenuTextActiveColor: $--sidebar-submenu-text-active-color;
   navBarHeight: $--navbar-height;
+  navBarBgColor: $--navbar-bg-color;
 }

@@ -6,19 +6,22 @@
     </el-submenu>
   </template>
   <template v-else>
-    <el-menu-item :index="resolvePath(item.path)">
-      <template v-if="item.meta" #title>{{ item.meta.title }}</template>
-    </el-menu-item>
+    <app-link :to="basePath">
+      <el-menu-item :index="resolvePath(item.path)">
+        <template v-if="item.meta" #title>{{ item.meta.title }}</template>
+      </el-menu-item>
+    </app-link>
   </template>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-
+import AppLink from './app-link.vue'
 import path from 'path'
 
 export default defineComponent({
   name: 'MenuItem',
+  components: { AppLink },
   props: {
     // route object
     item: {
